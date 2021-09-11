@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Text, View, ScrollView, FlatList, Modal, Button, StyleSheet } from 'react-native';
-import { Card, Icon } from 'react-native-elements';
+import { Card, Icon, Rating, Input } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
 import { postFavorite } from '../redux/ActionCreators';
@@ -29,7 +29,8 @@ function RenderCampsite(props) {
         return (
             <Card 
                 featuredTitle={campsite.name}
-                image={{uri: baseUrl + campsite.image}}>
+                image={{uri: baseUrl + campsite.image}}
+            >
                 <Text style={{margin: 10}}>
                     {campsite.description}
                 </Text>
@@ -50,7 +51,6 @@ function RenderCampsite(props) {
                    reverse
                    onPress={() => props.onShowModal()}
                    />
-
                 </View>
             </Card>
         );
@@ -68,7 +68,7 @@ function RenderComments({comments}) {
                    style={{alignItems:'flex-start', paddingVertical:'5%'}}
                    startingValue ={item.rating}
                    imageSize={10}
-                   readonly={true}
+                   readonly
                 />  
                 <Text style={{fontSize: 12}}>{`-- ${item.author}, ${item.date}`}</Text>
             </View>
@@ -97,6 +97,9 @@ class CampsiteInfo extends Component {
             showModal: false
         };
     }
+    markFavorite(campsiteId) {
+        this.props.postFavorite(campsiteId);
+    }
 
     toggleModal (){
         this.setState({showModal: !this.state.showModal});
@@ -122,11 +125,7 @@ class CampsiteInfo extends Component {
             
         });
     }
-
-    markFavorite(campsiteId) {
-        this.props.postFavorite(campsiteId);
-    }
-
+    
     static navigationOptions = {
         title: 'Campsite Information'
     }
@@ -179,7 +178,7 @@ class CampsiteInfo extends Component {
                                        this.handleComment(campsiteId);
                                        this.resetForm();
                                    }}
-                                   color ='#808080'
+                                   color ='#5637DD'
                                    title ='Submit'
                                 />   
                             </View>

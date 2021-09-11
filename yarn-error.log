@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/albertosantillan/.nvm/versions/node/v15.10.0/bin/node /Users/albertosantillan/.nvm/versions/node/v15.10.0/bin/yarnpkg add @react-native-cummunity/datetimepicker
+  /Users/albertosantillan/.nvm/versions/node/v15.10.0/bin/node /Users/albertosantillan/.nvm/versions/node/v15.10.0/bin/yarnpkg add react-navive-swipe-list-view
 
 PATH: 
   /Users/albertosantillan/.nvm/versions/node/v15.10.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/albertosantillan/.nvm/versions/node/v15.10.0/bin:/Users/albertosantillan/.yarn/bin:/Users/albertosantillan/.yarn/bin
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@react-native-cummunity%2fdatetimepicker: Not found
+  Error: https://registry.yarnpkg.com/react-navive-swipe-list-view: Not found
       at Request.params.callback [as _callback] (/Users/albertosantillan/.nvm/versions/node/v15.10.0/lib/node_modules/yarn/lib/cli.js:66992:18)
       at Request.self.callback (/Users/albertosantillan/.nvm/versions/node/v15.10.0/lib/node_modules/yarn/lib/cli.js:140763:22)
       at Request.emit (node:events:378:20)
@@ -37,7 +37,7 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
-      "@react-native-community/datetimepicker": "3.2.0",
+      "@react-native-community/datetimepicker": "^3.5.2",
       "@react-native-community/masked-view": "0.1.10",
       "expo": "41",
       "expo-constants": "~10.1.3",
@@ -1897,10 +1897,10 @@ Lockfile:
       sudo-prompt "^9.0.0"
       wcwidth "^1.0.1"
   
-  "@react-native-community/datetimepicker@3.2.0":
-    version "3.2.0"
-    resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-3.2.0.tgz#757ae731bab4442842a4a884941239efa75f371f"
-    integrity sha512-RX4/mi2beCiJXakJJr9bJrqNSfu7wc69Q0gPw21m/PdpYM14bJplVgjmL0hm3VSedj3Eg/dErWy5DdLM8upS/A==
+  "@react-native-community/datetimepicker@^3.5.2":
+    version "3.5.2"
+    resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-3.5.2.tgz#8e6feb30f2620e5abdf565d5fe74c0c04edcf6ae"
+    integrity sha512-TWRuAtr/DnrEcRewqvXMLea2oB+YF+SbtuYLHguALLxNJQLl/RFB7aTNZeF+OoH75zKFqtXECXV1/uxQUpA+sg==
     dependencies:
       invariant "^2.2.4"
   
