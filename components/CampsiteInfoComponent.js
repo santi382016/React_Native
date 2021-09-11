@@ -65,11 +65,11 @@ function RenderComments({comments}) {
             <View style={{margin: 10}}>
                 <Text style={{fontSize: 14}}>{item.text}</Text>
                 <Rating 
+                   style={{alignItems:'flex-start', paddingVertical:'5%'}}
                    startingValue ={item.rating}
                    imageSize={10}
-                   readonly
-                   style={{alignItems:'flex-start', paddingVertical:'5%'}}
-                 />  
+                   readonly={true}
+                />  
                 <Text style={{fontSize: 12}}>{`-- ${item.author}, ${item.date}`}</Text>
             </View>
         );
@@ -103,16 +103,23 @@ class CampsiteInfo extends Component {
     }
 
     handleComment(campsiteId){
-        this.props.postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
+        this.props.postComment(campsiteId, 
+            this.state.rating, 
+            this.state.author, 
+            this.state.text);
+
         this.toggleModal();
     }
-
+ handleSubmit (){
+     this.setState({submittedMessage: 'Submitted Rating: ${this.state.rating}'})
+ }
     resetForm (){
         this.setState({
+            showModal: false,
             rating: 5,
             author: '',
             text: '',
-            showModal: false
+            
         });
     }
 
@@ -146,6 +153,7 @@ class CampsiteInfo extends Component {
                        <View style={styles.Modal}>
                            <Rating
                               showRating
+                              type ='start'
                               startingValue={this.state.rating}
                               imageSize={40}
                               onFinishRating= {Rating => this.setState({rating: rating})}
@@ -185,9 +193,7 @@ class CampsiteInfo extends Component {
                                    title ='Cancel'
                                 />   
                             </View>
-
                        </View>
-
                  </Modal>
             </ScrollView>
         );
